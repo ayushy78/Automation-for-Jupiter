@@ -37,7 +37,7 @@ def SetSlippage(driver):
      print(e)
 
 def send_msg_on_telegram(msg):
-    telegram_api_url = f"https://api.telegram.org/bot5094707323:AAF8vnPRN2URUwv60Pva-Fy6jOCPZGO1kio/sendMessage?chat_id=-4073279255&text={msg}"
+    telegram_api_url = f"https://api.telegram.org/{api-link}/sendMessage?chat_id=-4073279255&text={msg}"
     el_resp = requests.get(telegram_api_url)
 def getvalue(driver):
     print("Getting Value")
@@ -64,7 +64,7 @@ def resultt(driver):
         while(WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div/div/div/div[1]/div/div/div[1]/div"))).text=="Confirming transaction"):
             time.sleep(3)
             continue
-        answer='Mommy',WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div/div/div/div[1]/div/div/div[2]/div"))).text
+        answer='{Name}',WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[1]/div/div/div/div[1]/div/div/div[2]/div"))).text
         print(answer)
         send_msg_on_telegram(answer)
     except Exception as e:
